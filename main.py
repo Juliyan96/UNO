@@ -131,7 +131,7 @@ def last_card_check(hand):
 #This is the main game loop
 while True:
 
-    print('Welcome to UNO! Finish your cards first to win')
+    print('Its UNO!! Lets See Who Finishes First!')
 
     deck = Deck()
     deck.shuffle()
