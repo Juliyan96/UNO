@@ -85,7 +85,7 @@ class Hand:
         return len(self.cards)
 
 
-#Funciton to randomly select who starts first
+#The function randomly selects who starts first
 def choose_first():
     if random.randint(0,1)==0:
         return 'Player'
@@ -93,7 +93,7 @@ def choose_first():
         return 'Pc'
 
 
-#Function to check if the card thrown by Player/PC is a valid card by comparing it with the top card
+#This function to check whether the card being put is valid
 def single_card_check(top_card,card):
     if card.color==top_card.color or top_card.rank==card.rank or card.cardtype=='action_nocolor':
         return True
@@ -101,8 +101,8 @@ def single_card_check(top_card,card):
         return False
 
 
-#This one is for PC
-#To check if PC has any valid card to throw 
+#This function is for the PC and to check whether the PC used a valid card
+
 def full_hand_check(hand,top_card):
     for c in hand.cards:
         if c.color==top_card.color or c.rank == top_card.rank or c.cardtype=='action_nocolor':
@@ -111,7 +111,7 @@ def full_hand_check(hand,top_card):
         return 'no card'
 
 
-#Function to check if either wins
+#This function checks who wins
 def win_check(hand):
     if len(hand.cards)==0:
         return True
@@ -119,7 +119,7 @@ def win_check(hand):
         return False
 
 
-#Function to check if last card is an action card (GAME MUST END WITH A NUMBER CARD)
+#This function checks if the las card is the function card
 def last_card_check(hand):
     for c in hand.cards:
         if c.cardtype!='number':
@@ -128,7 +128,7 @@ def last_card_check(hand):
             return False
 
 
-#The gaming loop
+#This is the main game loop
 while True:
 
     print('Welcome to UNO! Finish your cards first to win')
@@ -307,8 +307,8 @@ while True:
                 print('\nPC WON!!')
                 playing = False
 
-    new_game = input('Do you want to play again? (y/n)')
-    if new_game == 'y':
+    another_game = input('Do you want to play again? (y/n)')
+    if another_game == 'y':
         continue
     else:
         print('\nThat is the end of the Game!!')
